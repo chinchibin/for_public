@@ -11,7 +11,7 @@ import ButtonCopy from '../components/ButtonCopy';
 import ModalDialog from '../components/ModalDialog';
 import ExpandableField from '../components/ExpandableField';
 import useScroll from '../hooks/useScroll';
-import { PiArrowClockwiseBold, PiShareFatFill } from 'react-icons/pi';
+import { PiArrowClockwiseBold } from 'react-icons/pi';
 import { create } from 'zustand';
 // import { ReactComponent as BedrockIcon } from '../assets/bedrock.svg';
 import { ChatPageLocationState } from '../@types/navigate';
@@ -171,7 +171,7 @@ const ChatPage: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  const [showSystemContext, setShowSystemContext] = useState(false);
+  const [showSystemContext] = useState(false);
 
   const showingMessages = useMemo(() => {
     if (showSystemContext) {

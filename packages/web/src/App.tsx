@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   PiList,
   // PiHouse,
-  PiChatCircleText,
+  //PiChatCircleText,
   // PiPencil,
   // PiNote,
   // PiChatsCircle,
@@ -44,7 +44,7 @@ import {
   UpdatePromptRequest,
 } from 'generative-ai-use-cases-jp';
 
-const ragEnabled: boolean = import.meta.env.VITE_APP_RAG_ENABLED === 'true';
+//const ragEnabled: boolean = import.meta.env.VITE_APP_RAG_ENABLED === 'true';
 //const agentEnabled: boolean = import.meta.env.VITE_APP_AGENT_ENABLED === 'true';
 //const recognizeFileEnabled: boolean =
 //  import.meta.env.VITE_APP_RECOGNIZE_FILE_ENABLED === 'true';
