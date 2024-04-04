@@ -20,7 +20,7 @@
     "ragEnabled": true,
     "kendraIndexArn": null,
     "kendraDataSourceBucketName": null,
-    "selfSignUpEnabled": true,
+    "selfSignUpEnabled": false,
     "allowedSignUpEmailDomains": null,
     "samlAuthEnabled": false,
     "samlCognitoDomainName": "",

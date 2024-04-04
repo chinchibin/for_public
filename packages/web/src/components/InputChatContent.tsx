@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import ButtonSend from './ButtonSend';
 import Textarea from './Textarea';
 import useChat from '../hooks/useChat';
@@ -30,7 +30,7 @@ type Props = {
 
 const InputChatContent: React.FC<Props> = (props) => {
   const { pathname } = useLocation();
-  const { loading: chatLoading, isEmpty } = useChat(pathname);
+  const { loading: chatLoading, isEmpty, inputing: chatInputing, setInputing } = useChat(pathname);
 
   const loading = useMemo(() => {
     return props.loading === undefined ? chatLoading : props.loading;
@@ -39,6 +39,13 @@ const InputChatContent: React.FC<Props> = (props) => {
   const disabledSend = useMemo(() => {
     return props.content === '' || props.disabled;
   }, [props.content, props.disabled]);
+
+  useEffect(() => {
+    if (chatInputing !== '') {
+        props.onChangeContent(chatInputing);
+        setInputing('');
+    }
+  }, [props.content, chatInputing]);
 
   return (
     <div

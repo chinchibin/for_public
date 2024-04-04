@@ -189,8 +189,8 @@ const ChatPage: React.FC = () => {
     setInputSystemContext(currentSystemContext);
   }, [currentSystemContext, setInputSystemContext]);
 
- 
-  
+
+
 
   return (
     <>
@@ -212,7 +212,7 @@ const ChatPage: React.FC = () => {
             ))}
           </SelectField>
         </div>
-        
+
         {((isEmpty && !loadingMessages) || loadingMessages) && (
           <div className="relative flex h-[calc(100vh-13rem)] flex-col items-center justify-center">
           </div>
@@ -263,9 +263,9 @@ const ChatPage: React.FC = () => {
               <div className=" border-b border-gray-300"></div>
             </div>
           ))}
-        
+
         {/* <div className="fixed bottom-0 z-0 flex w-full flex-col items-center justify-center lg:pr-64 print:hidden"> */}
-        <div className={styles.fixedBottomContainer}> 
+        <div className={styles.fixedBottomContainer}>
           {isEmpty && !loadingMessages && !chatId && (
             <ExpandableField
               label="システムコンテキスト"

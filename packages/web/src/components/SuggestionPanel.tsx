@@ -3,9 +3,11 @@ import {useState ,useContext, useCallback  } from 'react';
 import { BaseProps } from '../@types/common';
 import {AppStateContext } from "../state/AppProvider";
 
-import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 import useDrawer from '../hooks/useDrawer';
+import { useLocation } from 'react-router-dom';
+import useChat from '../hooks/useChat';
+
 import {
   RecordedPrompt,
 } from 'generative-ai-use-cases-jp';
@@ -14,6 +16,9 @@ type Props = BaseProps & {
   onUpdatePromptChange:(newItem: RecordedPrompt) => void;
 };
 export const SuggestionPanel: React.FC<Props>= (props) => {
+  const { pathname } = useLocation()
+  const { setInputing } = useChat(pathname)
+
   const {opened: isOpenDrawer } = useDrawer();
   const appStateContext = useContext(AppStateContext)
   const [expandeduuid, setExpandeduuid] = useState("");
@@ -36,16 +41,18 @@ export const SuggestionPanel: React.FC<Props>= (props) => {
     props.onUpdatePromptChange(recordedPrompt);
   };
 
-  const navigate = useNavigate();
-  const handlePromptAddContent = useCallback((recordedPrompt:RecordedPrompt) => {
-    navigate('/chat', {
-      state: {
-        systemContext: recordedPrompt.title,
-        content: recordedPrompt.content,
-      },
-      replace: true,
-    });
-  }, [props, navigate]);
+
+  const handlePromptAddContent = useCallback((recordedPrompt:RecordedPrompt) => {    
+        setInputing(recordedPrompt.content);
+    
+    // navigate('/chat', {
+    //   state: {
+    //     systemContext: recordedPrompt.title,
+    //     content: recordedPrompt.content,
+    //   },
+    //   replace: true,
+    // });  
+  }, [props]);
 
   return (
     <nav className={`top-10 z-50 transition-all fixed -right-64 bg-aws-squid-ink lg:right-0 lg:z-0 flex w-64 flex-col text-sm text-black print:hidden ${isOpenDrawer ? 'right-0' : '-right-64'}`} style={{height: 'calc(100vh - 2.5rem)'}}>

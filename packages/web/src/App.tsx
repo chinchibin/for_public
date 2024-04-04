@@ -161,7 +161,7 @@ const App: React.FC = () => {
   const { getHasUpdate } = useVersion();
   const { createPrompts,updatePrompt} =  useChatApi();
 
-  const { data: prompts, error } = useChatApi().listPrompts(); // 假设useChatApi暴露了listPrompts
+  const { data: prompts, error } = useChatApi().listPrompts();
 
   
 

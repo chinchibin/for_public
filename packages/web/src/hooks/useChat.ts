@@ -28,6 +28,10 @@ const useChatState = create<{
     [id: string]: boolean;
   };
   setLoading: (id: string, newLoading: boolean) => void;
+  inputing:{
+    [id: string]: string;
+  };
+  setInputing: (id: string, nowInputing: string) => void;
   init: (id: string) => void;
   clear: (id: string) => void;
   restore: (id: string, messages: RecordedMessage[], chat: Chat) => void;
@@ -69,6 +73,18 @@ const useChatState = create<{
     });
   };
 
+  const setInputing = (id: string, newInputing: string) => {
+    set((state) => {
+      return {
+        inputing: {
+          ...state.inputing,
+          [id]: newInputing,
+        },
+      };
+    });
+  };
+
+  
   const initChat = (id: string, messages: UnrecordedMessage[], chat?: Chat) => {
     set((state) => {
       return {
@@ -202,6 +218,8 @@ const useChatState = create<{
         initChatWithSystemContext(id);
       }
     },
+    inputing: {},
+    setInputing,
     clear: (id: string) => {
       initChatWithSystemContext(id);
     },
@@ -400,6 +418,8 @@ const useChat = (id: string, chatId?: string) => {
     chats,
     loading,
     setLoading,
+    inputing,
+    setInputing,
     init,
     clear,
     restore,
@@ -439,6 +459,10 @@ const useChat = (id: string, chatId?: string) => {
     loading: loading[id] ?? false,
     setLoading: (newLoading: boolean) => {
       setLoading(id, newLoading);
+    },
+    inputing: inputing[id] ?? '',
+    setInputing: (newInputing: string) => {
+      setInputing(id, newInputing);
     },
     loadingMessages: isLoadingMessage,
     init: () => {
