@@ -1,5 +1,5 @@
 import React, { useMemo ,useState,useContext,useEffect, useCallback} from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import {
   PiList,
   // PiHouse,
@@ -283,11 +283,11 @@ const App: React.FC = () => {
             </Link> */}
             <Menu>
               <MenuHandler>
-                <Button>{email}</Button>
+                <Button placeholder={undefined}>{email}</Button>
               </MenuHandler>
-              <MenuList>
+              <MenuList placeholder={undefined}>
                 <hr className="my-2 border-blue-gray-50" />
-                <MenuItem onClick={signOut} className="flex items-center gap-2 ">
+                <MenuItem onClick={signOut} className="flex items-center gap-2 " placeholder={undefined}>
                   <svg
                     width="16"
                     height="14"
@@ -302,7 +302,7 @@ const App: React.FC = () => {
                       fill="#90A4AE"
                     />
                   </svg>
-                  <Typography variant="small" className="font-medium">
+                  <Typography variant="small" className="font-medium" placeholder={undefined}>
                     Sign Out
                   </Typography>
                 </MenuItem>              
