@@ -218,7 +218,7 @@ const ChatPage: React.FC = () => {
           </div>
         )}
 
-        {!isEmpty && !loadingMessages && (
+        {/* {!isEmpty && !loadingMessages && (
           <div className="my-2 flex flex-col items-end pr-3">
             {chatId && (
               <div>
@@ -248,7 +248,7 @@ const ChatPage: React.FC = () => {
               </span>
             </label>
           </div>
-        )}
+        )} */}
 
         {!isEmpty &&
           showingMessages.map((chat, idx) => (

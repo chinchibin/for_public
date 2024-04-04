@@ -71,15 +71,15 @@ const items: ItemProps[] = [
   //   name:'chat',
   // },
 
-  ragEnabled
-    ? {
-        label: 'RAG チャット',
-        to: '/rag',
-        icon: <PiChatCircleText />,
-        display: 'usecase' as const,
-        name:'rag',
-      }
-    : null,
+  // ragEnabled
+  //   ? {
+  //       label: 'RAG チャット',
+  //       to: '/rag',
+  //       icon: <PiChatCircleText />,
+  //       display: 'usecase' as const,
+  //       name:'rag',
+  //     }
+  //   : null,
  // agentEnabled
   //   ? {
   //       label: 'Agent チャット',

@@ -35,7 +35,7 @@ const recognizeFileEnabled: boolean =
 const routes: RouteObject[] = [
   {
     path: '/',
-    element: <ChatPage />,
+    element: <RagPage />,
   },
   {
     path: '/setting',
@@ -43,7 +43,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/chat',
-    element: <ChatPage />,
+    element: <RagPage />,
   },
   {
     path: '/chat/:chatId',
