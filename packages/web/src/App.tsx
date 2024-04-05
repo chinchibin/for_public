@@ -257,8 +257,8 @@ const App: React.FC = () => {
   return (
     <div className="screen:w-screen screen:h-screen overflow-x-hidden">
       <main className="flex-1">
-        <div className='bg-aws-smile h-10 rounded-lg'>
-          <div className="flex text-white items-center justify-end border-t border-gray-400 px-3 py-2">
+        <div className='fixed w-[100%] z-[100] right-5 float-right bg-aws-smile h-15 rounded-lg'>
+          <div className="flex text-white items-center justify-end border-t border-gray-400 px-3 py-2 z-100">
             
             <IconWithDot showDot={hasUpdate}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 ">
@@ -291,14 +291,14 @@ const App: React.FC = () => {
         </header>
 
         <div
-          className={`fixed -left-64 top-10 z-50 transition-all lg:left-0 lg:z-0 ${isOpenDrawer ? 'left-0' : '-left-64'}`}>
+          className={`fixed -left-64 top-20 z-10 transition-all lg:left-0 lg:z-10 ${isOpenDrawer ? 'left-0' : '-left-64'}`}>
           <Drawer items={items} />
         </div>
         <SuggestionPanel recordedPrompts={recordedPrompts} onUpdatePromptChange={handleUpdatePromptChange} />
         {appStateContext?.state.isNewSuggestionOpen && <NewSuggestionItemPanel onSave={onSave}/>}
         {appStateContext?.state.isUpdateSuggestionOpen && updatePromptItem && <UpdateSuggestionItemPanel updatePromptItem={updatePromptItem} onUpdatePromptChange={handleDoUpdatePromptChange} />}
         <div
-          id="smallDrawerFiller"
+          id="smallDrawerFiller" style={{marginTop: 5 + 'em'}}
           className={`${isOpenDrawer ? 'visible' : 'invisible'} lg:invisible`}>
           <div
             className="screen:h-screen fixed top-0 z-40 w-screen bg-gray-900/90"

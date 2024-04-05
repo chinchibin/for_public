@@ -9,7 +9,7 @@ import {
   RouteObject,
 } from 'react-router-dom';
 // import LandingPage from './pages/LandingPage';
-import Setting from './pages/Setting';
+// import Setting from './pages/Setting';
 import ChatPage from './pages/ChatPage';
 import SharedChatPage from './pages/SharedChatPage';
 import SummarizePage from './pages/SummarizePage';
@@ -37,10 +37,10 @@ const routes: RouteObject[] = [
     path: '/',
     element: <RagPage />,
   },
-  {
-    path: '/setting',
-    element: <Setting />,
-  },
+  // {
+  //   path: '/setting',
+  //   element: <Setting />,
+  // },
   {
     path: '/chat',
     element: <RagPage />,

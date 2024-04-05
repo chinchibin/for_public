@@ -35,6 +35,7 @@ export default function SignOutMenu({label}: {label: string}) {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        style={{textTransform: 'none'}}
       >
         {label}
       </Button>

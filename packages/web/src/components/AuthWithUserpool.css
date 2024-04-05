@@ -1,7 +1,7 @@
 [data-amplify-authenticator]::before {
     content: '';
     display: block;
-    height: 2.5rem;
+    height: 3.5rem;
     background-color: black;
     width: 100%; 
     margin: 0 auto ;
@@ -13,7 +13,6 @@
 }
 [data-amplify-router]{
     width:700px !important;
-    height: 400px !important;
     margin: 0 auto !important;
     border-color:#bab7b8 !important;
     border-radius: 8px !important;

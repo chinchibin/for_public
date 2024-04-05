@@ -71,7 +71,8 @@ const ChatMessage: React.FC<Props> = (props) => {
           )}
           {chatContent?.role === 'assistant' && (
             <div className="bg-aws-ml h-min rounded p-1">
-              <BedrockIcon className="size-7 fill-white" />
+              <BedrockIcon className="size-7 fill-white bg-white stroke-none" />
+              
             </div>
           )}
           {chatContent?.role === 'system' && (

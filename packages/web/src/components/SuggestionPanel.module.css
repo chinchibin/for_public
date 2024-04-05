@@ -25,7 +25,7 @@
     border-color: transparent;
   }
   .actionPrompt {
-    right: 1.4rem; 
+    right: 13.4rem; 
     /* right-1 通常意味着右侧间距，这里假设为0.25rem */
     z-index: 10;
     color: black;
