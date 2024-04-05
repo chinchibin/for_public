@@ -7,7 +7,7 @@ import Logout from '@mui/icons-material/Logout';
 import { useCallback } from 'react';
 import { Auth } from 'aws-amplify';
 
-export default function SignOutMenu({label}) {
+export default function SignOutMenu({label}: {label: string}) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -19,7 +19,7 @@ export default function SignOutMenu({label}) {
   }, []);
 
   const handleClose = () => {
-    handleExit();
+    handleExit()
     signOut();
   };
 
