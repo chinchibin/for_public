@@ -43,6 +43,7 @@ import {
   RecordedPrompt,
   UpdatePromptRequest,
 } from 'generative-ai-use-cases-jp';
+import SignOutMenu from './components/SignOutMenu';
 
 //const ragEnabled: boolean = import.meta.env.VITE_APP_RAG_ENABLED === 'true';
 //const agentEnabled: boolean = import.meta.env.VITE_APP_AGENT_ENABLED === 'true';
@@ -270,7 +271,7 @@ const App: React.FC = () => {
               className="mr-2 overflow-x-hidden hover:brightness-75">
               
             </Link> */}
-            <span className="text-sm">{email}</span>
+            <SignOutMenu label={email}></SignOutMenu>
             
           </div>
         </div>
